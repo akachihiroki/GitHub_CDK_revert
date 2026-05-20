@@ -6,7 +6,7 @@ export class GitHubCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const bucketName = `github-cdk-assets-${this.account}-${this.region}`;
+    const bucketName = `github-cdk-revert-assets-${this.account}-${this.region}`;
 
     const bucket = new s3.Bucket(this, 'PackageBucket', {
       bucketName,
