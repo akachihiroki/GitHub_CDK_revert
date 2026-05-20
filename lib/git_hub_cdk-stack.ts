@@ -7,6 +7,7 @@ export class GitHubCdkStack extends Stack {
     super(scope, id, props);
 
     const bucketName = `github-cdk-assets-${this.account}-${this.region}`;
+    const triggerRevert: number = 'force-ci-failure';
 
     const bucket = new s3.Bucket(this, 'PackageBucket', {
       bucketName,
